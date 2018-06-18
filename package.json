@@ -1,0 +1,25 @@
+{
+  "name": "website",
+  "version": "dev-master",
+  "description": "Personal Homepage project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trashtatur/website.git"
+  },
+  "keywords": [],
+  "author": "Andreas Hoerster, Felix Kirsch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trashtatur/website/issues"
+  },
+  "homepage": "https://github.com/trashtatur/website#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "express": "^4.16.3"
+  }
+}
