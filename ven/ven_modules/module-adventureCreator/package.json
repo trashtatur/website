@@ -1,0 +1,16 @@
+{
+  "name": "module-adventureCreator",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Andreas Hörster",
+  "license": "ISC",
+  "dependencies": {
+    "cytoscape": "^3.2.13",
+    "webcola": "^3.3.8"
+  }
+}
