@@ -1,4 +1,5 @@
-import TEST from 'cm/module-database'
-let bla = new TEST();
+import webserverHelper from 'cm/module-webserver'
 
-bla.log();
+let  webserver = webserverHelper.provide();
+webserver.startServer();
+
