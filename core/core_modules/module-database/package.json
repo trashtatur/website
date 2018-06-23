@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Andreas Hoerster, Felix Kirsch",
+  "author": "Andreas Hoerster, Felix Paur",
   "license": "ISC",
   "dependencies": {
     "mysql2": "^1.5.3",
