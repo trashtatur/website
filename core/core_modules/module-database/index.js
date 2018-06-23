@@ -1,12 +1,4 @@
-
-class TEST {
-
-    log() {
-        console.log("HI!");
-    }
-
-}
-
-export default TEST
+import {dbSync} from './model/sync'
 
 
+dbSync()

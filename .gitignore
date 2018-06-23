@@ -2,3 +2,5 @@
 node_modules
 /ven/ven_modules/ven_modules
 /core/core_modules/core_modules
+modelConfig.json
+.vscode
