@@ -1,0 +1,15 @@
+{
+  "name": "module-logger",
+  "version": "0.0.1",
+  "description": "A module for logging",
+  "main": "helper/logger-helper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "winston": "^3.0.0"
+  }
+}
