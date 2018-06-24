@@ -1,6 +1,7 @@
 import Sequelize from 'sequelize';
 import fileConfig from './modelConfig.json'
-
+import loggerHelper from 'cm/module-logger'
+const logger = loggerHelper.provide();
 
 /**
  * This connects to the database
@@ -20,7 +21,7 @@ export const sequelize = new Sequelize(config.dbName, config.dbUser, config.dbPa
 
 export const dbReady = sequelize.authenticate()
     .then(function(err) {
-        console.info('Connection has been established successfully.');//TODO Logger
+        logger.info('Connection has been established successfully.');
     }, function (err) {
-        console.error('Unable to connect to the database:', err);//TODO Logger
+        logger.error('Unable to connect to the database:', err);
     });
