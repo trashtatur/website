@@ -1,4 +1,7 @@
 import express from 'express';
+import loggerHelper from "../../module-logger";
+
+let logger = loggerHelper.provide();
 
 class WebServer {
 
@@ -11,7 +14,7 @@ class WebServer {
     }
     startServer() {
         this.app.listen(this.port, function () {
-            console.log("Server listening on port 3000")
+            logger.info("Server listening on port 3000")
         });
     }
 

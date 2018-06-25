@@ -1,14 +1,9 @@
-/**
- * This module exports a Promise-function that loads all models into sequlize and then syncs them to the DB
- * Once that's done the promise get's resolved.
- */
-
 import {dbReady, sequelize} from './connector';
 import ArticlesModel from './schemas/ArticlesModel'
 import UserModel from './schemas/UserModel'
+import loggerHelper from 'cm/module-logger'
 
-
-
+let logger =loggerHelper.provide();
 
 /**
  * Synchronize the database with the models
@@ -21,10 +16,10 @@ export async function dbSync(force) {
 
     try {
         const status = sequelize.sync({force});
-        console.log('It worked!');
+        logger.info('It worked!');
         return status;
     } catch (err) {
-        console.error('An error occurred while creating the table:', err);
+        logger.error('An error occurred while creating the table:', err);
         throw err;
     }
 }
