@@ -1,0 +1,60 @@
+.row {
+    display: table-row;
+    width: 100%;
+    display: inline-block;
+    float: none;
+}
+.col-md-1 {
+    float: left;
+    display: table-cell;
+    width: 10%;
+    padding: 0.1em;
+}
+.col-md-2 {
+    float: left;
+    display: table-cell;
+    width: 20%;
+    padding: 0.1em;
+}
+.col-md-3 {
+    float: left;
+    display: table-cell;
+    width: 30%;
+    padding: 0.1em;
+}
+.col-md-4 {
+    float: left;
+    display: table-cell;
+    width: 40%;
+    padding: 0.1em;
+}
+.col-md-5 {
+    float: left;
+    display: table-cell;
+    width: 50%;
+    padding: 0.1em;
+}
+.col-md-6 {
+    float: left;
+    display: table-cell;
+    width: 60%;
+    padding: 0.1em;
+}
+.col-md-7 {
+    float: left;
+    display: table-cell;
+    width: 70%;
+    padding: 0.1em;
+}
+.col-md-8 {
+    float: left;
+    display: table-cell;
+    width: 80%;
+    padding: 0.1em;
+}
+iframe {
+    padding: 0.5em;
+    border-style: solid;
+    border-color: black;
+    border-width: 1mm;
+}
