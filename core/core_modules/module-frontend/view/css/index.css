@@ -1,5 +1,4 @@
 .row {
-    display: table-row;
     width: 100%;
     display: inline-block;
     float: none;
@@ -54,7 +53,5 @@
 }
 iframe {
     padding: 0.5em;
-    border-style: solid;
-    border-color: black;
-    border-width: 1mm;
+    border: 1mm solid black;
 }
