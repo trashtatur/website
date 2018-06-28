@@ -1,4 +1,5 @@
-import colors from 'colors'
+import colors from 'colors';
+
 export default class Logger {
 
     /**
@@ -8,7 +9,7 @@ export default class Logger {
      */
     static formatMessage(message,funName) {
         let timestamp = new Date().toLocaleString("de-DE", {hour12: false});
-        return '['+timestamp+']['+funName+'] : '+message
+        return '['+timestamp+']['+funName+'] : '+message;
 
     }
 
@@ -16,49 +17,49 @@ export default class Logger {
      * @param message Message to send
      */
     static verbose(message) {
-        console.log(this.formatMessage(message,'VERBOSE').blue)
+        console.log(this.formatMessage(message,'VERBOSE').blue);
     }
 
     /**
      * @param message Message to send
      */
     static error(message) {
-        console.log(this.formatMessage(message,'ERROR').red)
+        console.log(this.formatMessage(message,'ERROR').red);
     }
 
     /**
      * @param message Message to send
      */
     static debug(message) {
-        console.log(this.formatMessage(message,'DEBUG').yellow)
+        console.log(this.formatMessage(message,'DEBUG').yellow);
     }
 
     /**
      * @param message Message to send
      */
     static warn(message) {
-        console.log(this.formatMessage(message,'WARNING').cyan)
+        console.log(this.formatMessage(message,'WARNING').cyan);
     }
 
     /**
      * @param message Message to send
      */
     static data(message) {
-        console.log(this.formatMessage(message,'DATA').magenta)
+        console.log(this.formatMessage(message,'DATA').magenta);
     }
 
     /**
      * @param message Message to send
      */
     static info(message) {
-        console.log(this.formatMessage(message,'INFO').green)
+        console.log(this.formatMessage(message,'INFO').green);
     }
 
     /**
      * @param message Message to send
      */
     static silly(message) {
-        console.log(this.formatMessage(message,'SILLY').rainbow)
+        console.log(this.formatMessage(message,'SILLY').rainbow);
     }
 
     /**

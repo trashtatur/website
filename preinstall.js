@@ -14,10 +14,12 @@ fs.readdirSync(cM)
         let modPath = join(cM, mod);
 
         // ensure path has package.json
-        if (!fs.existsSync(join(modPath, 'package.json'))) return;
+        if (!fs.existsSync(join(modPath, 'package.json'))) {
+            return;
+        }
 
         // install folder
-        cp.spawn('npm', ['install','--save'], { env: process.env, cwd: modPath, stdio: 'inherit' })
+        cp.spawn('npm', ['install','--save'], { env: process.env, cwd: modPath, stdio: 'inherit' });
     });
 
 
@@ -27,10 +29,12 @@ fs.readdirSync(venM)
         let modPath = join(venM, mod);
 
         // ensure path has package.json
-        if (!fs.existsSync(join(modPath, 'package.json'))) return;
+        if (!fs.existsSync(join(modPath, 'package.json'))) {
+            return;
+        }
 
         // install folder
-        cp.spawn('npm', ['install','--save'], { env: process.env, cwd: modPath, stdio: 'inherit' })
+        cp.spawn('npm', ['install','--save'], { env: process.env, cwd: modPath, stdio: 'inherit' });
     });
 
 
@@ -44,15 +48,15 @@ fs.symlink(vendorModPath,vendorLinkPath,function () {
             fs.readlink(vendorLinkPath,function (err,linkstring) {
                 console.log(linkstring);
                 if (linkstring === vendorModPath) {
-                    console.log("Succesfully established Link to vendor modules")
+                    console.log("Succesfully established Link to vendor modules");
                 } else {
-                    console.error("Link to vendor modules was not established!!!")
+                    console.error("Link to vendor modules was not established!!!");
                 }
-            })
+            });
         } else {
-            console.error("Created file is no symbolic Link for vendor modules")
+            console.error("Created file is no symbolic Link for vendor modules");
         }
-    })
+    });
 });
 
 let coreModPath = "../core/core_modules";
@@ -65,13 +69,13 @@ fs.symlink(coreModPath,coreLinkPath,function () {
             fs.readlink(coreLinkPath,function (err,linkstring) {
                 console.log(linkstring);
                 if (linkstring ===coreModPath) {
-                    console.log("Succesfully established Link to core modules")
+                    console.log("Succesfully established Link to core modules");
                 } else {
-                    console.error("Link to core modules was not established!!!")
+                    console.error("Link to core modules was not established!!!");
                 }
-            })
+            });
         } else {
-            console.error("Created file is no symbolic Link for core modules")
+            console.error("Created file is no symbolic Link for core modules");
         }
-    })
+    });
 });

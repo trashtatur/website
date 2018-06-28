@@ -1,6 +1,6 @@
 import Sequelize from 'sequelize';
-import fileConfig from './modelConfig.json'
-import loggerHelper from 'cm/module-logger'
+import fileConfig from './modelConfig.json';
+import loggerHelper from 'cm/module-logger';
 const logger = loggerHelper.provide();
 
 /**
@@ -18,9 +18,8 @@ export const sequelize = new Sequelize(config.dbName, config.dbUser, config.dbPa
     host: config.host,
     dialect:'mysql'
 });
-
 export const dbReady = sequelize.authenticate()
-    .then(function(err) {
+.then(function(err) {
         logger.info('Connection has been established successfully.');
     }, function (err) {
         logger.error('Unable to connect to the database:', err);
