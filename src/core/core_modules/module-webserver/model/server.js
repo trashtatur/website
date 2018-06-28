@@ -1,5 +1,5 @@
 import express from 'express';
-import loggerHelper from "../../module-logger";
+import loggerHelper from "cm/module-logger/helper/logger-helper";
 
 let logger = loggerHelper.provide();
 

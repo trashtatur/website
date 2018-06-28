@@ -39,8 +39,9 @@ fs.readdirSync(venM)
 
 
 //Builds symlinks for module directories
-let vendorModPath = "../ven/ven_modules";
-let vendorLinkPath = "node_modules/vm";
+console.log();
+let vendorModPath = resolve(__dirname,"ven/ven_modules");
+let vendorLinkPath = resolve(__dirname,"../node_modules/vm");
 
 fs.symlink(vendorModPath,vendorLinkPath,function () {
     fs.lstat(vendorLinkPath,function (err,stats) {
@@ -59,8 +60,8 @@ fs.symlink(vendorModPath,vendorLinkPath,function () {
     });
 });
 
-let coreModPath = "../core/core_modules";
-let coreLinkPath = "node_modules/cm";
+let coreModPath = resolve(__dirname,"core/core_modules");
+let coreLinkPath = resolve(__dirname,"../node_modules/cm");
 
 
 fs.symlink(coreModPath,coreLinkPath,function () {

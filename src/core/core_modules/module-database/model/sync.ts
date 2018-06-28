@@ -1,8 +1,6 @@
+///<reference path="connector.ts"/>
 import {dbReady, sequelize} from './connector';
-import ArticlesModel from './schemas/ArticlesModel'
-import UserModel from './schemas/UserModel'
 import loggerHelper from 'cm/module-logger'
-
 let logger =loggerHelper.provide();
 
 /**
@@ -12,6 +10,7 @@ let logger =loggerHelper.provide();
  */
 export async function dbSync(force) {
     if (!force) force = false;
+    // noinspection BadExpressionStatementJS
     dbReady;
 
     try {

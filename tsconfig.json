@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "include": [
+    "src/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/core/core_modules/*/node_modules",
+    "src/ven/ven_modules/*/node_modules"
+  ]
+}

@@ -1,5 +1,5 @@
-import Sequelize from 'sequelize';
-import fileConfig from './modelConfig.json';
+import {Sequelize} from 'sequelize-typescript';
+var config = require('./modelConfig.json');
 import loggerHelper from 'cm/module-logger';
 const logger = loggerHelper.provide();
 
@@ -8,16 +8,17 @@ const logger = loggerHelper.provide();
  * @type {Sequelize} : An ORM thing to interact with thse database
  */
 
- // config
- export const config = fileConfig;
- export const testString = 'test';
-
-
 // Please mind that the database needs to actually exist first!
-export const sequelize = new Sequelize(config.dbName, config.dbUser, config.dbPassword,{
+export const sequelize = new Sequelize({
+    database: config.dbName,
+    username: config.dbUser,
+    password: config.dbPassword,
     host: config.host,
-    dialect:'mysql'
+    dialect: 'mysql',
+    modelPaths:[__dirname + '/schemas']
 });
+
+
 export const dbReady = sequelize.authenticate()
 .then(function(err) {
         logger.info('Connection has been established successfully.');

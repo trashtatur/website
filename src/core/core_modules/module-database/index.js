@@ -1,4 +1,4 @@
 import {dbSync} from './model/sync'
 
 
-dbSync()
+dbSync();
