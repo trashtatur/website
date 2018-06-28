@@ -12,14 +12,14 @@ const colors = [{ red: '3b', green: '5c', blue: '78'}, { red: '28', green: '41',
 const numberOfColors = colors.length;
 
 // initialize colors
-color = getRandomColor();
+let color = getRandomColor();
 console.log('color', color);
 document.getElementById('home').style.backgroundColor = rgbToHex(color);
 console.log('test');
 // make brighter
 brighten(color);
 console.log('brightened color: ', color);
-hexColor = rgbToHex(color);
+let hexColor = rgbToHex(color);
 document.getElementById('links').style.backgroundColor = hexColor;
 document.getElementById('sideBar').style.backgroundColor = hexColor;
 brighten(color);
@@ -31,8 +31,8 @@ document.getElementById('user').style.backgroundColor = hexColor;
 
 console.log('colors', colors);
 
-var iframe = document.getElementsByTagName( "iframe" )[ 0 ];
-iframe.baseURI = "www.google.de"
+let iframe = document.getElementsByTagName( "iframe" )[ 0 ];
+iframe.baseURI = "www.google.de";
 alert( "Frame title: " + iframe.baseURI);
 
 
@@ -60,11 +60,11 @@ function brighten(color) {
     color.red = reduceHex(color.red);
     //console.log('red ', color.red);
     //console.log('green ', color.green);
-color.green = reduceHex(color.green);
-//console.log('green ', color.green);
-//console.log('blue ', color.blue);
-color.blue = reduceHex(color.blue);
-//console.log('red ', color.blue);
+    color.green = reduceHex(color.green);
+    //console.log('green ', color.green);
+    //console.log('blue ', color.blue);
+    color.blue = reduceHex(color.blue);
+    //console.log('red ', color.blue);
 }
 
 /*function reduceHex(hex) {
@@ -94,15 +94,15 @@ function convertSingleIntToHex(char) {
             case '10':
                 return 'a';
             case '11':
-                return b;
+                return 'b';
             case '12':
-                return c;
+                return 'c';
             case '13':
-                return d;
+                return 'd';
             case '14':
-                return e;
+                return 'e';
             case '15':
-                return f;
+                return 'f';
         }
     } else {
         console.error(char, 'is not a Hex.');

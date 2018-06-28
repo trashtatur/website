@@ -1,7 +1,7 @@
-import Logger from "../model/LoggerModel"
+import Logger from "../model/LoggerModel";
 
 function provide() {
     return Logger;
 }
 
-export default {provide}
+export default {provide};
