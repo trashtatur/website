@@ -15,10 +15,10 @@ export async function dbSync(force) {
 
     try {
         const status = sequelize.sync({force});
-        logger.info('It worked!');
+        logger.info('Sequelize table creation succesful');
         return status;
     } catch (err) {
-        logger.error('An error occurred while creating the table:', err);
+        logger.error('An error occurred while creating the table:'+ err);
         throw err;
     }
 }

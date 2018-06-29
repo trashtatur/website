@@ -1,4 +1,3 @@
-// @ts-ignore
 let colors = require('colors');
 
 export default class Logger {

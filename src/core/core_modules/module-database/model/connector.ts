@@ -22,7 +22,7 @@ export const sequelize = new Sequelize({
 
 export const dbReady = sequelize.authenticate()
 .then(function(err) {
-        logger.info('Connection has been established successfully.');
+        logger.info('Connection to database has been established successfully.');
     }, function (err) {
-        logger.error('Unable to connect to the database:', err);
+        logger.error('Unable to connect to the database:'+ err);
     });

@@ -22,7 +22,7 @@ readdirp(settings,
                 logger.debug("Added Controller: " + controllerPath)
             }
         } catch (err) {
-            logger.error("Problem adding Controller: "+controllerPath)
+            logger.error("Problem adding Controller: "+controllerPath +"\n"+err)
         }
     },
     function (err, res) {
