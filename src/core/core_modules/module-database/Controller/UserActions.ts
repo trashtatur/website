@@ -3,6 +3,9 @@ import * as routes from 'express-decorators';
 import Users from '../model/repositories/UserModelRepo';
 
 @routes.basePath('API/database/UsersAction')
-class ArticleActions extends Action{
+export default class ArticleActions extends Action{
 
+    constructor() {
+        super();
+    }
 }

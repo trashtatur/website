@@ -1,4 +1,5 @@
-import colors from 'colors';
+// @ts-ignore
+let colors = require('colors');
 
 export default class Logger {
 
@@ -13,10 +14,12 @@ export default class Logger {
 
     }
 
+
     /**
      * @param message Message to send
      */
     static verbose(message) {
+        // @ts-ignore
         console.log(this.formatMessage(message,'VERBOSE').blue);
     }
 
@@ -24,6 +27,7 @@ export default class Logger {
      * @param message Message to send
      */
     static error(message) {
+        // @ts-ignore
         console.log(this.formatMessage(message,'ERROR').red);
     }
 
@@ -31,6 +35,7 @@ export default class Logger {
      * @param message Message to send
      */
     static debug(message) {
+        // @ts-ignore
         console.log(this.formatMessage(message,'DEBUG').yellow);
     }
 
@@ -38,6 +43,7 @@ export default class Logger {
      * @param message Message to send
      */
     static warn(message) {
+        // @ts-ignore
         console.log(this.formatMessage(message,'WARNING').cyan);
     }
 
@@ -45,6 +51,7 @@ export default class Logger {
      * @param message Message to send
      */
     static data(message) {
+        // @ts-ignore
         console.log(this.formatMessage(message,'DATA').magenta);
     }
 
@@ -52,6 +59,7 @@ export default class Logger {
      * @param message Message to send
      */
     static info(message) {
+        // @ts-ignore
         console.log(this.formatMessage(message,'INFO').green);
     }
 
@@ -59,6 +67,7 @@ export default class Logger {
      * @param message Message to send
      */
     static silly(message) {
+        // @ts-ignore
         console.log(this.formatMessage(message,'SILLY').rainbow);
     }
 
@@ -91,6 +100,7 @@ export default class Logger {
                 this.info(message);
                 break;
             default:
+                // @ts-ignore
                 console.log(this.formatMessage(message,category).grey);
                 break;
         }
