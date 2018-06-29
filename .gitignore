@@ -5,9 +5,8 @@ node_modules
 modelConfig.json
 .vscode
 *.map
+src/*.js
 src/core/core_modules/**/*.js
 src/ven/ven_modules/**/*.js
 !src/ven/ven_modules/*/view/js/*.js
 !src/core/core_modules/*/view/js/*.js
-!src/core/core_modules/*/index.js
-!src/ven/ven_modules/*/index.js

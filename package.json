@@ -4,11 +4,11 @@
   "description": "Personal Homepage project",
   "main": "index.js",
   "scripts": {
-    "install": "node src/preinstall.js",
+    "install": "node src/preinstall.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc",
     "prestart": "npm run tsc",
-    "start": "node --require babel-register --require babel-polyfill src/index.js"
+    "start": "node --require babel-register --require babel-polyfill src/index.ts"
   },
   "repository": {
     "type": "git",

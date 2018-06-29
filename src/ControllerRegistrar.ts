@@ -1,14 +1,6 @@
 import loggerHelper from 'cm/module-logger';
-import readdirp from 'readdirp';
-let fs = require('fs');
-let resolve = require('path').resolve;
-let join = require('path').join;
-let cp = require('child_process');
-
+let readdirp = require('readdirp');
 let logger = loggerHelper.provide();
-
-let cM = resolve(__dirname, 'core/core_modules');
-let venM = resolve(__dirname, 'ven/ven_modules');
 
 let settings = {
     root: '.',
@@ -24,6 +16,7 @@ readdirp(settings,
         let controllerPath = fileInfo.fullPath;
         try {
             if (fileInfo.name !== 'Action.ts') {
+                // @ts-ignore
                 let controller = require(controllerPath).default;
                 new controller();
                 logger.debug("Added Controller: " + controllerPath)

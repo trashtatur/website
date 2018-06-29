@@ -15,6 +15,7 @@ export const sequelize = new Sequelize({
     password: config.dbPassword,
     host: config.host,
     dialect: 'mysql',
+    logging: (msg) => logger.data(msg),
     modelPaths:[__dirname + '/schemas']
 });
 
