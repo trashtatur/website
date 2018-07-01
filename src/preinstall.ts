@@ -39,6 +39,7 @@ fs.readdirSync(venM)
 
 
 //Builds symlinks for module directories
+/*
 console.log();
 let vendorModPath = resolve(__dirname,"ven/ven_modules");
 let vendorLinkPath = resolve(__dirname,"../node_modules/vm");
@@ -80,3 +81,4 @@ fs.symlink(coreModPath,coreLinkPath,function () {
         }
     });
 });
+*/

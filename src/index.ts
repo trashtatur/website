@@ -1,5 +1,5 @@
-import webserver from 'cm/module-webserver';
-let database =  require('cm/module-database');
+import webserver from './core/core_modules/module-webserver';
+let database =  require('./core/core_modules/module-database');
 let controllerRegistrar = require('./ControllerRegistrar');
 
 controllerRegistrar.registerControllers();

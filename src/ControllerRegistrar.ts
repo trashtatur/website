@@ -1,4 +1,4 @@
-import logger from 'cm/module-logger';
+import logger from './core/core_modules/module-logger';
 
 let readdirp = require('readdirp');
 
@@ -16,7 +16,6 @@ export function registerControllers() {
             let controllerPath = fileInfo.fullPath;
             try {
                 if (fileInfo.name !== 'Action.ts') {
-                    // @ts-ignore
                     let controller = require(controllerPath).default;
                     new controller();
                     logger.debug("Added Controller: " + controllerPath)

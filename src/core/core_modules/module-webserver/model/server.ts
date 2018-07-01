@@ -1,5 +1,5 @@
 import * as express from 'express'
-import logger from "cm/module-logger";
+import logger from "../../module-logger";
 
 
 export class WebServer {

@@ -3,6 +3,5 @@ declare module "*.json" {
     export default value;
 }
 
-declare function require(name:string);
 declare var __dirname;
 declare var process;

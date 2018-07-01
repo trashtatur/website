@@ -1,5 +1,5 @@
 import {dbReady, sequelize} from './connector';
-import logger from 'cm/module-logger'
+import logger from '../../module-logger'
 
 /**
  * Synchronize the database with the models
