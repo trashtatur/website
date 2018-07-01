@@ -1,7 +1,6 @@
 import {Sequelize} from 'sequelize-typescript';
 var config = require('./modelConfig.json');
-import loggerHelper from 'cm/module-logger';
-const logger = loggerHelper.provide();
+import logger from 'cm/module-logger';
 
 /**
  * This connects to the database

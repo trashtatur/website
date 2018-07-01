@@ -1,7 +1,5 @@
-///<reference path="connector.ts"/>
 import {dbReady, sequelize} from './connector';
-import loggerHelper from 'cm/module-logger'
-let logger =loggerHelper.provide();
+import logger from 'cm/module-logger'
 
 /**
  * Synchronize the database with the models

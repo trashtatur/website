@@ -1,9 +1,8 @@
 import * as express from 'express'
-import loggerHelper from "cm/module-logger/helper/logger-helper";
+import logger from "cm/module-logger";
 
-let logger = loggerHelper.provide();
 
-class WebServer {
+export class WebServer {
     private readonly port: number;
     public express;
 
@@ -26,8 +25,5 @@ class WebServer {
 
 
 }
-
-let webserver = new WebServer();
-export default webserver
 
 

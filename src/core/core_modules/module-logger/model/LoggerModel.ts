@@ -7,7 +7,7 @@ export default class Logger {
      * @param {string} message
      * @param {string} funName
      */
-    static formatMessage(message,funName) {
+     formatMessage(message,funName) {
         let timestamp = new Date().toLocaleString("de-DE", {hour12: false});
         return '['+timestamp+']['+funName+'] : '+message;
 
@@ -17,7 +17,7 @@ export default class Logger {
     /**
      * @param message Message to send
      */
-    static verbose(message) {
+     verbose(message) {
         // @ts-ignore
         console.log(this.formatMessage(message,'VERBOSE').blue);
     }
@@ -25,7 +25,7 @@ export default class Logger {
     /**
      * @param message Message to send
      */
-    static error(message) {
+     error(message) {
         // @ts-ignore
         console.log(this.formatMessage(message,'ERROR').red);
     }
@@ -33,7 +33,7 @@ export default class Logger {
     /**
      * @param message Message to send
      */
-    static debug(message) {
+     debug(message) {
         // @ts-ignore
         console.log(this.formatMessage(message,'DEBUG').yellow);
     }
@@ -41,7 +41,7 @@ export default class Logger {
     /**
      * @param message Message to send
      */
-    static warn(message) {
+     warn(message) {
         // @ts-ignore
         console.log(this.formatMessage(message,'WARNING').cyan);
     }
@@ -49,7 +49,7 @@ export default class Logger {
     /**
      * @param message Message to send
      */
-    static data(message) {
+     data(message) {
         // @ts-ignore
         console.log(this.formatMessage(message,'DATA').magenta);
     }
@@ -57,7 +57,7 @@ export default class Logger {
     /**
      * @param message Message to send
      */
-    static info(message) {
+     info(message) {
         // @ts-ignore
         console.log(this.formatMessage(message,'INFO').green);
     }
@@ -65,7 +65,7 @@ export default class Logger {
     /**
      * @param message Message to send
      */
-    static silly(message) {
+     silly(message) {
         // @ts-ignore
         console.log(this.formatMessage(message,'SILLY').rainbow);
     }
@@ -75,7 +75,7 @@ export default class Logger {
      * @param {string} message
      * @param {string} category custom category to send message in
      */
-    static custom(message,category) {
+     custom(message,category) {
         switch (category){
             case 'debug':
                 this.debug(message);

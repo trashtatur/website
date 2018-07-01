@@ -1,7 +1,7 @@
 import handlebars from 'handlebars';
 import express from 'express';
 import * as web from 'express-decorators';
-import server from '../model/server'
+import server from '../index'
 
 
 export class Action {
