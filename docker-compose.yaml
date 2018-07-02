@@ -4,8 +4,6 @@ services:
     env_file:
      - .env
     image: ${CONTAINER_IMAGE_NAME}
-    ports:
-      - 3000:3000
     networks:
       - website
     environment:
@@ -15,19 +13,20 @@ services:
       WEBSITE_DB_PASSWORD: ${WEBSITE_DB_PW}
     depends_on:
       - db
-    links:
-      - db:mysql
 
   db:
-    image: mysql:latest
+    image: mysql
     env_file:
      - .env
     networks:
       - website
     environment:
       MYSQL_ROOT_PASSWORD: ${WEBSITE_DB_PW}
-      MYSQL_USER: ${WEBSITE_DB_USER}
+      MYSQL_ROOT_USER: ${WEBSITE_DB_USER}
       MYSQL_DATABASE: ${WEBSITE_DB_NAME}
+    volumes:
+      - /data/dev/db:/var/lib/mysql
+
 
 networks:
   website:
