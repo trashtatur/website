@@ -1,13 +1,16 @@
 version: '3'
 services:
   website:
+    tty: true
     env_file:
      - .env
     image: ${CONTAINER_IMAGE_NAME}
     networks:
       - website
+    ports:
+      - 3000:3000
     environment:
-      WEBSITE_DB_HOST: db:3306
+      WEBSITE_DB_HOST: ${WEBSITE_DB_HOST}
       WEBSITE_DATABASE: ${WEBSITE_DB_NAME}
       WEBSITE_DB_USER: ${WEBSITE_DB_USER}
       WEBSITE_DB_PASSWORD: ${WEBSITE_DB_PW}
@@ -15,7 +18,7 @@ services:
       - db
 
   db:
-    image: mysql
+    image: mysql:5.7
     env_file:
      - .env
     networks:

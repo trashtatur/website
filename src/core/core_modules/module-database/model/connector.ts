@@ -1,6 +1,8 @@
 import {Sequelize} from 'sequelize-typescript';
-var config = require('./modelConfig.json');
+import {DataSupplier} from "./DataSupplier";
 import logger from '../../module-logger';
+
+let dataSupplier = new DataSupplier();
 
 /**
  * This connects to the database
@@ -9,10 +11,10 @@ import logger from '../../module-logger';
 
 // Please mind that the database needs to actually exist first!
 export const sequelize = new Sequelize({
-    database: config.dbName,
-    username: config.dbUser,
-    password: config.dbPassword,
-    host: config.host,
+    database: dataSupplier.getDatabaseName(),
+    username: dataSupplier.getDatabaseUser(),
+    password: dataSupplier.getDatabasePassword(),
+    host: dataSupplier.getDatabaseHost(),
     dialect: 'mysql',
     logging: (msg) => logger.data(msg),
     modelPaths:[__dirname + '/schemas']
