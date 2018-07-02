@@ -1,14 +1,14 @@
 import handlebars from 'handlebars';
 import express from 'express';
 import * as web from 'express-decorators';
-import server from '../index'
+import {webserver} from '../index'
 
 
 export class Action {
     private readonly server: express;
 
     constructor() {
-        this.server = server.getServer();
+        this.server = webserver.getServer();
         web.register(this.server,this)
     }
     /**
