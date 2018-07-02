@@ -1,5 +1,6 @@
 .idea
 node_modules
+.env
 /src/ven/ven_modules/ven_modules
 /src/core/core_modules/core_modules
 modelConfig.json
