@@ -11,7 +11,12 @@ export default class IndexAction extends Action {
 
     @routes.get('/index')
     async index(request,response) {
-        response.render('testout/hello',{content:"HALLO"});
+        response.render('testout/layout/hello',{content:"HALLO"});
+    }
+
+    @routes.get('/testout')
+    async testout(request,response) {
+        response.render('test2/layout/asswipe',{data:"HEYOOO"})
     }
 }
 
