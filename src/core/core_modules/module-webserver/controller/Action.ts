@@ -1,4 +1,3 @@
-import handlebars from 'handlebars';
 import express from 'express';
 import * as web from 'express-decorators';
 import {webserver} from '../index'
@@ -18,7 +17,6 @@ export class Action {
      * @returns {*} the rendered page
      */
     render(file:string,data:any = null) {
-        let template = handlebars.compile(file);
-        return template(data);
+        this.server.render(file,data)
     }
 }

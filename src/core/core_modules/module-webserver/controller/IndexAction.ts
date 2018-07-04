@@ -11,7 +11,7 @@ export default class IndexAction extends Action {
 
     @routes.get('/index')
     async index(request,response) {
-        response.send(this.render('Hello World'));
+        response.render('testout/hello',{content:"HALLO"});
     }
 }
 
