@@ -1,4 +1,5 @@
 let exphbs  = require('express-handlebars');
+let fs = require('fs');
 import * as express from 'express'
 import logger from "../../module-logger";
 
@@ -13,13 +14,16 @@ export class WebServer {
          */
         this.express = express();
         this.setTemplateEngine();
-        this.setIndexStatics()
-
     }
     startServer(): void {
         this.express.listen(this.port, function () {
             logger.info("Server listening on port 3000")
         });
+    }
+
+    addStaticRoute(virtualPath:string,actualPath:string): void {
+        this.express.use(virtualPath,express.static(actualPath));
+        logger.debug('Added static route '+virtualPath+" for Path "+actualPath)
     }
 
     private setTemplateEngine() {
@@ -28,10 +32,6 @@ export class WebServer {
         this.express.engine('hbs',exphbs({extname: 'hbs', defaultLayout:__dirname+'/../../../../templates/index/layout/index'}));
     }
 
-    private setIndexStatics() {
-        this.express.use("/index/css",express.static(__dirname+'/../../../../templates/index/css/'));
-        this.express.use("/index/js",express.static(__dirname+'/../../../../templates/index/js/'));
-    }
 
     getServer(): express {
         return this.express;
