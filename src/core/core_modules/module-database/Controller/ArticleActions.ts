@@ -4,8 +4,8 @@ import * as routes from 'express-decorators';
 @routes.basePath('API/database/ArticlesAction')
 export default class ArticleActions extends Action{
 
-    constructor() {
-        super();
+    constructor(dirname) {
+        super(dirname);
     }
 
 }

@@ -4,20 +4,22 @@ let path = require('path');
 let readdirp = require('readdirp');
 
 let settingsTemplates = {
-  root: './src/templates',
+  root: './src',
   entryType: 'directories',
-  depth: 1
+  directoryFilter:['!model',"!Model","!Controller","!controller","!node_modules"],
+  depth: 5
 };
 
 export function registerTemplates() {
     readdirp(settingsTemplates,
         function (dirInfo) {
-            let dirPath = '/'+dirInfo.path;
-            let fullPath = dirInfo.fullPath;
-            let parentDir = dirInfo.parentDir;
-
             if (dirInfo.name.includes('css') || dirInfo.name.includes('js')) {
-                webserver.addStaticRoute(dirPath,fullPath)
+                let dirPath = '/'+dirInfo.path;
+                let fullPath = dirInfo.fullPath;
+                let parentDir = dirInfo.parentDir.split(path.sep);
+                parentDir.pop();
+                let modulePath = "/"+parentDir.pop()+"/"+dirInfo.name;
+                webserver.addStaticRoute(modulePath,fullPath)
             }
     },
         function (err, res) {

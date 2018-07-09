@@ -1,13 +1,16 @@
 let exphbs  = require('express-handlebars');
-let fs = require('fs');
+let path = require('path');
+import {partialDirs,registerPartials} from "../../../../PartialsRegistrar";
 import * as express from 'express'
 import logger from "../../module-logger";
 
 export class WebServer {
     private readonly port: number;
     public express;
+    private readonly hbsInstance;
 
     constructor() {
+        this.hbsInstance = exphbs.create();
         this.port = 3000;
         /**
          * @type {express}
@@ -27,9 +30,15 @@ export class WebServer {
     }
 
     private setTemplateEngine() {
+        registerPartials();
+        let engine = exphbs({
+            extname: 'hbs',
+            defaultLayout:__dirname+'/../frontend/layouts/master',
+            partialsDir: partialDirs,
+        });
         this.express.set('view engine','hbs');
-        this.express.set('views',__dirname+'/../../../../templates/');
-        this.express.engine('hbs',exphbs({extname: 'hbs', defaultLayout:__dirname+'/../../../../templates/index/layout/index'}));
+        this.express.set('views',path.resolve(__dirname,'../../../../'));  //src
+        this.express.engine('hbs',engine);
     }
 
 

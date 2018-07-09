@@ -5,18 +5,14 @@ import * as routes from 'express-decorators';
 @routes.basePath('/index')
 export default class IndexAction extends Action {
 
-    constructor() {
-        super();
+    constructor(dirname) {
+        super(dirname);
     }
 
     @routes.get('/index')
     async index(request,response) {
-        response.render('testout/layout/hello',{content:"HALLO"});
+        this.render(response,'index',{content:"HALLO",data:'KOT'});
     }
 
-    @routes.get('/testout')
-    async testout(request,response) {
-        response.render('test2/layout/asswipe',{data:"HEYOOO"})
-    }
 }
 
