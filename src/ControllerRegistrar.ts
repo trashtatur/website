@@ -6,7 +6,7 @@ let settings = {
     root: '.',
     entryType: 'files',
     fileFilter: ['*Action.ts', '*Actions.ts'],
-    directoryFilter: ["!View", "!view", "!node_modules", "!Model", "!model", "!helper", "!Helper", "!templates"],
+    directoryFilter: ["!View", "!view", "!node_modules", "!Model", "!model",],
     depth: 5
 };
 
@@ -17,7 +17,7 @@ export function registerControllers() {
             try {
                 if (fileInfo.name !== 'Action.ts') {
                     let controller = require(controllerPath).default;
-                    new controller();
+                    new controller(fileInfo.parentDir);
                     logger.debug("Added Controller: " + controllerPath)
                 }
             } catch (err) {
