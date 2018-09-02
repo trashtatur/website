@@ -1,14 +1,7 @@
 .idea
 node_modules
 .env
-/src/ven/ven_modules/ven_modules
-/src/core/core_modules/core_modules
 modelConfig.json
 .vscode
-*.map
-src/*.js
-src/core/core_modules/**/*.js
-src/ven/ven_modules/**/*.js
-!src/ven/ven_modules/*/view/js/*.js
-!src/core/core_modules/*/view/js/*.js
+build
 
