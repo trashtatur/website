@@ -1,7 +1,6 @@
-
+const baseconvert = require('baseconvert');
 
 const split = 8;
-
 const colors = [{ red: '3b', green: '5c', blue: '78'}, { red: '28', green: '41', blue: '5f'},
 { red: 'b7', green: '75', blue: '75'}, { red: 'da', green: '87', blue: '09'}, 
 { red: '90', green: 'ba', blue: '3e'}, { red: '3a', green: '24', blue: 'aa'},

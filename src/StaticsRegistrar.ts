@@ -14,12 +14,10 @@ export function registerTemplates() {
     readdirp(settingsTemplates,
         function (dirInfo) {
             if (dirInfo.name.includes('css') || dirInfo.name.includes('js')) {
-                console.log(dirInfo.name);
-                let dirPath = '/'+dirInfo.path;
                 let fullPath = dirInfo.fullPath;
                 let parentDir = dirInfo.parentDir.split(path.sep);
                 parentDir.pop();
-                let modulePath = "/"+parentDir.pop()+"/"+dirInfo.name;
+                let modulePath = path.sep+parentDir.pop()+path.sep+dirInfo.name;
                 webserver.addStaticRoute(modulePath,fullPath)
             }
     },
