@@ -15,7 +15,7 @@ export class DataSupplier {
     private readonly databaseName:string;
     private readonly databasePassword:string;
     private readonly databaseUser:string;
-
+///////////////////////////////////////////////// constructor
     /**
  * @author 
  * 
