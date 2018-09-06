@@ -5,6 +5,16 @@ const fs = require('fs');
 const readdirp = require('readdirp');
 const path = require('path');
 
+/**
+ * @author 
+ * 
+ * @description
+ * @version Erstellungsdatum
+ * @version Datum der neusten Änderung
+ *          Beschreibung der Änderung
+ * 
+*/
+
 let settings = {
     root: "./build",
     entryType: "files",
@@ -13,7 +23,15 @@ let settings = {
     depth: 6
 };
 
-
+/**
+ * @author 
+ * 
+ * @description
+ * @version Erstellungsdatum
+ * @version Datum der neusten Änderung
+ *          Beschreibung der Änderung
+ * 
+*/
 export function bundleJSDependancies() {
     readdirp(settings,
         function (fileInfo) {
