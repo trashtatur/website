@@ -1,5 +1,14 @@
 import logger from './core/core_modules/module-logger';
 
+/**
+ * @author 
+ * 
+ * @description
+ * @version Erstellungsdatum
+ * @version Datum der neusten Änderung
+ *          Beschreibung der Änderung
+ * 
+*/
 let readdirp = require('readdirp');
 
 let settings = {
@@ -10,6 +19,17 @@ let settings = {
     depth: 5
 };
 
+////////////////////////////////////////// exports
+
+/**
+ * @author 
+ * 
+ * @description
+ * @version Erstellungsdatum
+ * @version Datum der neusten Änderung
+ *          Beschreibung der Änderung
+ * 
+*/
 export function registerControllers() {
     readdirp(settings,
         function (fileInfo) {
