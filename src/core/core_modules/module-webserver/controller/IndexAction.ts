@@ -1,6 +1,15 @@
 import {Action} from './Action'
 import * as routes from 'express-decorators';
 
+/**
+ * @author 
+ * 
+ * @description
+ * @version Erstellungsdatum
+ * @version Datum der neusten Änderung
+ *          Beschreibung der Änderung
+ * 
+*/
 
 @routes.basePath('/index')
 export default class IndexAction extends Action {
