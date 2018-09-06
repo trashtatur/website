@@ -1,6 +1,15 @@
 import {Action} from './Action'
 import * as routes from 'express-decorators';
 
+/**
+ * @author 
+ * 
+ * @description
+ * @version Erstellungsdatum
+ * @version Datum der neusten Änderung
+ *          Beschreibung der Änderung
+ * 
+*/
 
 @routes.basePath('/index')
 export default class IndexAction extends Action {
@@ -11,7 +20,7 @@ export default class IndexAction extends Action {
 
     @routes.get('/index')
     async index(request,response) {
-        this.render(response,'index',{content:"HALLO",data:'KOT'});
+        this.render(response,'index',{content:"HALLO",data:"MOIN MOIN"});
     }
 
 }
