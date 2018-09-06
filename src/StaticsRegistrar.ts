@@ -3,13 +3,33 @@ import {webserver} from './core/core_modules/module-webserver';
 let path = require('path');
 let readdirp = require('readdirp');
 
+/**
+ * @author 
+ * 
+ * @description
+ * @version Erstellungsdatum
+ * @version Datum der neusten Änderung
+ *          Beschreibung der Änderung
+ * 
+*/
+
 let settingsTemplates = {
   root: './build',
   entryType: 'directories',
   directoryFilter:['!model',"!Model","!Controller","!controller","!node_modules"],
   depth: 5
 };
+////////////////////////////////////////////////// export
 
+/**
+ * @author 
+ * 
+ * @description
+ * @version Erstellungsdatum
+ * @version Datum der neusten Änderung
+ *          Beschreibung der Änderung
+ * 
+*/
 export function registerTemplates() {
     readdirp(settingsTemplates,
         function (dirInfo) {
