@@ -1,4 +1,4 @@
-var config = require('./modelConfig.json');
+var config = require('./../../../../../modelConfig.json');
 
 export class DataSupplier {
 
