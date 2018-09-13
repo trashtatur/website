@@ -1,5 +1,5 @@
 //import { getRandomColor } from "./colorUtils";
-const { getRandomColor } = require('./'); 
+const { getRandomColor } = require('./colorUtils'); 
 
 /**
  * The ts file for the maste template
