@@ -1,5 +1,11 @@
 var config = require('../../../../../modelConfig.json');
 
+/**
+ * @name Data Supplier
+ * @description Provides credential data to the connector based on the environment it is in
+ * @module module-database
+ * @devnotes
+ */
 export class DataSupplier {
 
     private readonly databaseHost:string;

@@ -1,5 +1,11 @@
 import logger from "./core/core_modules/module-logger";
 
+/**
+ * @name bundler
+ * @description bundles frontend script files so that require can be used
+ * @module helper
+ * @devnotes
+ */
 const browserify = require('browserify');
 const fs = require('fs');
 const readdirp = require('readdirp');

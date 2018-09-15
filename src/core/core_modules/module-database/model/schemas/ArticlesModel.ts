@@ -1,8 +1,12 @@
 import {Table, Column, Model,ForeignKey, Length, BelongsTo, PrimaryKey, AllowNull, CreatedAt, UpdatedAt, DeletedAt} from 'sequelize-typescript';
 import {UserModel} from "./UserModel";
 
-
-
+/**
+ * @name Articles Model
+ * @description Logical Model for the Articles table for execution via sequelize
+ * @module module-database
+ * @devnotes
+ */
 @Table
 export class ArticlesModel extends Model<ArticlesModel> {
 

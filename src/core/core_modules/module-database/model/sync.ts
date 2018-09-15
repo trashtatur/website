@@ -2,6 +2,13 @@ import {dbReady, sequelize} from './connector';
 import logger from '../../module-logger'
 
 /**
+ * @name Sync
+ * @description Synchronizes the logical models with the database to create tables
+ * @module module-database
+ * @devnotes
+ */
+
+/**
  * Synchronize the database with the models
  * @param force     see Sequlize.sync
  * @returns {Promise}

@@ -2,6 +2,12 @@ import {Sequelize} from 'sequelize-typescript';
 import {DataSupplier} from "./DataSupplier";
 import logger from '../../module-logger';
 
+/**
+ * @name connector
+ * @description Connects sequelize instance to the database and provices logical models to sequelize
+ * @module module-database
+ * @devnotes
+ */
 let dataSupplier = new DataSupplier();
 
 /**

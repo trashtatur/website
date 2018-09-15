@@ -1,7 +1,12 @@
 import {Action} from './Action'
 import * as routes from 'express-decorators';
 
-
+/**
+ * @name Index Controller
+ * @description Provides Connection to landing page right now
+ * @module module-webserver
+ * @devnotes
+ */
 @routes.basePath('/index')
 export default class IndexAction extends Action {
 

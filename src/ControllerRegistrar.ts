@@ -1,5 +1,11 @@
 import logger from './core/core_modules/module-logger';
 
+/**
+ * @name Controller Registrar
+ * @description Registers Controllers to the express server so that routes are recognized
+ * @module helper
+ * @devnotes
+ */
 let readdirp = require('readdirp');
 
 let settings = {
