@@ -9,7 +9,12 @@ let partialsPathSetting = {
   directoryFilter: ['!model',"!Model","!Controller","!controller","!node_modules"],
   depth: 5
 };
-
+/**
+ * @name Partials Registrar
+ * @description Registers handlebars partials to the webservers templating engine
+ * @module helper
+ * @devnotes
+ */
 let partialDirs = [];
 let addedPartials = [];
 

@@ -2,7 +2,12 @@ import logger from "./core/core_modules/module-logger";
 import {webserver} from './core/core_modules/module-webserver';
 let path = require('path');
 let readdirp = require('readdirp');
-
+/**
+ * @name Statics Registrar
+ * @description Registers JSS and CSS dompaths in the modules for usage in clients
+ * @module helper
+ * @devnotes
+ */
 let settingsTemplates = {
   root: './build',
   entryType: 'directories',

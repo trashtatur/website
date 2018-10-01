@@ -1,5 +1,11 @@
 let colors = require('colors');
-
+/**
+ * @name Logger
+ * @description Provides a very basic to console logging service
+ * @module module-logger
+ * @devnotes TODO Enable file logging
+ *           TODO Shift logging outputs to configurable channels
+ */
 export default class Logger {
 
     /**
@@ -12,7 +18,6 @@ export default class Logger {
         return '['+timestamp+']['+funName+'] : '+message;
 
     }
-
 
     /**
      * @param message Message to send

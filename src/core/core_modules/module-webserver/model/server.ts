@@ -4,6 +4,12 @@ import {partialDirs,registerPartials} from "../../../../PartialsRegistrar";
 import * as express from 'express'
 import logger from "../../module-logger";
 
+/**
+ * @name Webserver
+ * @description Provides hosting, enables static paths and templating and handles core connecting function
+ * @module module-webserver
+ * @devnotes TODO Add method to add helper functions  to the webservers templating engine
+ */
 export class WebServer {
     private readonly port: number;
     public express;
@@ -24,11 +30,20 @@ export class WebServer {
         });
     }
 
+    /**
+     * Registers server path to paths that will be used by the clients
+     *
+     * @param virtualPath The path on the client. the dom path
+     * @param actualPath The actual path on the server
+     */
     addStaticRoute(virtualPath:string,actualPath:string): void {
         this.express.use(virtualPath,express.static(actualPath));
         logger.debug('Added static route '+virtualPath+" for Path "+actualPath)
     }
 
+    /**
+     * Sets up the handlebars templating engine
+     */
     private setTemplateEngine() {
         registerPartials();
         let engine = exphbs({
