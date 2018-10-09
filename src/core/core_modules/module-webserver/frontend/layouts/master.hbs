@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="/module-webserver/css/master.css">
+    <link rel="stylesheet" type="text/css" href="/module-webserver/css/sidemenu.css">
     <title>Document</title>
 </head>
 <header class="row">
@@ -17,13 +18,13 @@
 <body class="row">
     <aside>
         <nav id="sideBar" class="col-md-2">
-            <div id="entry1">Entry1</div>
-            <div id="entry2">Entry2</div>
+            {{>dynamicMenu}}
         </nav>
     </aside>
     <div>
         {{{body}}}
     </div>
 </body>
+<script src="/module-webserver/js/bundled-sideMenu.js"></script>
 <script src="/module-webserver/js/bundled-master.js"></script>
 </html>

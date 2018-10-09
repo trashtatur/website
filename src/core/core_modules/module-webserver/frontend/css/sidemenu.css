@@ -1,0 +1,66 @@
+.nav-block {
+    display: block;
+}
+
+.nav-block a, .dropdown-btn {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    border: none;
+    background: inherit;
+    width:100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+.arrow-down {
+    margin-left: 42%;
+    display: none;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 8px solid;
+}
+
+.sidemenu-button {
+    transition: all 0.5s;
+}
+.sidemenu-button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.sidemenu-button span::after{
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.sidemenu-button:hover span {
+    padding-right: 25px;
+}
+
+.sidemenu-button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+/* On mouse-over */
+.nav-block a:hover, .dropdown-btn:hover {
+    color: #f1f1f1;
+}
+
+.dropdown-container {
+    display: none;
+    background-color: #262626;
+    padding-left: 8px;
+}

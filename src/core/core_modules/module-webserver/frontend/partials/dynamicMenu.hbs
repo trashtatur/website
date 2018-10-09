@@ -1,1 +1,26 @@
-<h2>{{data}}</h2>
+{{!
+    Template for dynamic menu content. Parameters expected:
+    @param SideMenuItems -- Array of the following data
+    @param frontname -- String to be displayed on menu entry / button
+    @param content -- Only if isDropdown=false -> URL for button
+    @param isDropdown -- boolean to indicate if item is dropdown
+        if yes: SideMenuItems -- Nested dataset
+}}
+<div class="nav-block">
+    {{#SideMenuItems}}
+        {{#if isDropdown}}
+            <button class="dropdown-btn">
+                <span class="dropdown-btn-text">{{frontname}}</span>
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-container">
+                <div class="arrow-down"></div>
+                {{>dynamicMenu}}
+            </div>
+        {{else}}
+            <a class="sidemenu-button" href="{{content}}">
+                <span>{{frontname}}</span>
+            </a>
+        {{/if}}
+    {{/SideMenuItems}}
+</div>

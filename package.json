@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc --watch",
     "prestart": "tsc; ./setbuild.sh;",
-    "start": "node --require babel-register --require babel-polyfill build/index.js"
+    "start": "node build/index.js"
   },
   "repository": {
     "type": "git",
