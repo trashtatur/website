@@ -12,6 +12,7 @@
 .col-md-2 {
     float: left;
     display: table-cell;
+    height: 100vh;
     width: 20%;
     padding: 0.1em;
 }

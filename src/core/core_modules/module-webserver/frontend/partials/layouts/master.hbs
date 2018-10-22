@@ -1,4 +1,3 @@
-{{!-- master.hbs --}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/module-webserver/css/master.css">
+    <link rel="stylesheet" type="text/css" href="/module-webserver/css/sidemenu.css">
     {{#> master-layout-head-block}}
         {{!-- Additional head content can be added here --}}
     {{/master-layout-head-block}}
@@ -28,8 +28,7 @@
 <body class="row">
     <aside>
         <nav id="sideBar" class="col-md-2">
-            <div id="entry1">Entry1</div>
-            <div id="entry2">Entry2</div>
+            {{>dynamicMenu}}
         </nav>
     </aside>
     <div>
@@ -38,6 +37,7 @@
         {{/master-layout-body-block}}
     </div>
 </body>
+<script src="/module-webserver/js/bundled-sideMenu.js"></script>
 <script src="/module-webserver/js/bundled-master.js"></script>
 {{#> master-layout-script-footer}}
     {{!-- Additional footer scripts can go here --}}

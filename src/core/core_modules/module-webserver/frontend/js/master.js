@@ -20,8 +20,8 @@ document.getElementById('links').style.backgroundColor = hexColor;
 document.getElementById('sideBar').style.backgroundColor = hexColor;
 brighten(color);
 document.getElementById('link1').style.backgroundColor = hexColor;
-document.getElementById('entry1').style.backgroundColor = hexColor;
-document.getElementById('entry2').style.backgroundColor = hexColor;
+//document.getElementById('entry1').style.backgroundColor = hexColor;
+//document.getElementById('entry2').style.backgroundColor = hexColor;
 document.getElementById('user').style.backgroundColor = hexColor;
 
 
