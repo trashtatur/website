@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300');
+.fighter-row-container {
+    font-family: 'Roboto', sans-serif;
+    border-radius: 5px;
+    margin: 5px;
+    padding:10px;
+}
+
+.fighter-input-form {
+    display: table-cell;
+    padding-left: 8px;
+}
+
+.fighter-table-submit {
+    height: 1cm;
+    width: 1cm;
+    border-radius:30px;
+    border-style: none;
+    background: #1567a2;
+    transition:box-shadow 200ms;
+    font-size: 15pt;
+    display: table-cell;
+    color: white;
+}
+
+.fighter-info-cl1 {
+    display: inline-block;
+}
+
+.fighter-info-cl2 {
+    margin-left: 7px;
+    display: inline-block;
+    float: right;
+}
+
+.fighter-value-field {
+    max-width: 1.5cm;
+}
+
+.fighter-table-submit:hover {
+    box-shadow: 3px 2px 8px gray;
+}
+
+.fighter-form-inputfield {
+    height: 10%;
+    width: auto;
+}
+
+.add-fighter-form-container {
+    display: table;
+}
+
+.fighter-table-row-deleter {
+    background: darkred;
+    color: white;
+    height: 0.8cm;
+    width: 0.8cm;
+    border-radius: 20px;
+    border-style: none;
+    transition:opacity 1000ms;
+    opacity: 0;
+}
+
+.fighter-table-row:hover td .fighter-table-row-deleter {
+    opacity: 1;
+}

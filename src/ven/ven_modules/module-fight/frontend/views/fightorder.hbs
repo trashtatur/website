@@ -1,0 +1,37 @@
+{{!-- Extends master layout --}}
+{{#>layouts/master}}
+{{#*inline "master-layout-head-block"}}
+    <script src="/module-fight/js/orderFighters.js"></script>
+    <link rel="stylesheet" type="text/css" href="/module-fight/css/fighttable.css">
+{{/inline}}
+{{#*inline "master-layout-body-block"}}
+
+<div class="fighter-page-container">
+    <div class="add-fighter-form-container">
+        <form class="fighter-input-form" id="fighter-input-form">
+            <input class="fighter-form-inputfield" type="text" name="fighter-name" title="NAME" placeholder="name">
+            <input class="fighter-form-inputfield fighter-value-field" type="number" name="fighter-TP" title="TP" placeholder="TP">
+            <input class="fighter-form-inputfield fighter-value-field" type="number" name="fighter-INIT" title="INIT" placeholder="INIT">
+            <input class="fighter-form-inputfield fighter-value-field" type="number" name="fighter-RK" title="RK" placeholder="RK">
+            <input type="checkbox" name="unit-Type" title="isMonster">
+        </form>
+        <button class="fighter-table-submit" onclick="orderFighters(); sortTable();">+</button>
+    </div>
+    <div class="fighter-table-container">
+        <table class="fightOrderTable" id="fight-order-table">
+            <tbody>
+                {{!-- Fighter cells will go here via JS script --}}
+            </tbody>
+        </table>
+    </div>
+    <script>
+        initFighter('Khij', '0', '0', '0', 'hero');
+        initFighter('Argek', '0', '0', '0', 'hero');
+        initFighter('Dorn', '0', '0', '0', 'hero');
+        initFighter('Shimnar', '0', '0', '0', 'hero');
+        initFighter('Cpt. Blaubart', '0', '0', '0', 'hero');
+        initFighter('Gavin', '0', '0', '0', 'hero');
+    </script>
+</div>
+{{/inline}}
+{{/layouts/master}}
