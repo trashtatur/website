@@ -1,11 +1,22 @@
+{{!-- master.hbs --}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="/module-webserver/css/master.css">
-    <title>Document</title>
+    {{#> master-layout-head-block}}
+        {{!-- Additional head content can be added here --}}
+    {{/master-layout-head-block}}
+    <title>
+        {{#if title}}
+            {{title}}
+        {{else}}
+            Document
+        {{/if}}
+    </title>
 </head>
 <header class="row">
     <div id="home" class="col-md-1">Home</div>
@@ -22,8 +33,13 @@
         </nav>
     </aside>
     <div>
-        {{{body}}}
+        {{#>master-layout-body-block}}
+            {{!-- Content for body of master layout goes here. You have to extend this layout for that --}}
+        {{/master-layout-body-block}}
     </div>
 </body>
 <script src="/module-webserver/js/bundled-master.js"></script>
+{{#> master-layout-script-footer}}
+    {{!-- Additional footer scripts can go here --}}
+{{/master-layout-script-footer}}
 </html>

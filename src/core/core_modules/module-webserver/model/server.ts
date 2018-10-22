@@ -48,7 +48,6 @@ export class WebServer {
         registerPartials();
         let engine = exphbs({
             extname: 'hbs',
-            defaultLayout:__dirname+'/../frontend/layouts/master',
             partialsDir: partialDirs,
         });
         this.express.set('view engine','hbs');

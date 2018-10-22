@@ -12,33 +12,22 @@ const numberOfColors = colors.length;
 
 // initialize colors
 let color = getRandomColor();
-console.log('color', color);
 document.getElementById('home').style.backgroundColor = rgbToHex(color);
-console.log('test');
 // make brighter
 brighten(color);
-console.log('brightened color: ', color);
 let hexColor = rgbToHex(color);
 document.getElementById('links').style.backgroundColor = hexColor;
 document.getElementById('sideBar').style.backgroundColor = hexColor;
 brighten(color);
-console.log('brightened color: ', color);
 document.getElementById('link1').style.backgroundColor = hexColor;
 document.getElementById('entry1').style.backgroundColor = hexColor;
 document.getElementById('entry2').style.backgroundColor = hexColor;
 document.getElementById('user').style.backgroundColor = hexColor;
 
-console.log('colors', colors);
-
-let iframe = document.getElementsByTagName( "iframe" )[ 0 ];
-iframe.baseURI = "www.google.de";
-alert( "Frame title: " + iframe.baseURI);
 
 
 // help functions
 function getRandomColor() {
-    console.log(numberOfColors);
-    console.log(colors);
     return colors[randomOf(numberOfColors, true)];
 }
 
@@ -73,15 +62,10 @@ function brighten(color) {
 }*/
 
 function reduceHex(hex) {
-    console.log('hex: ', hex);
     let hexAsInt = 16*convertSingleHexToInt(hex[0]) + convertSingleHexToInt(hex[1]);
-    console.log('hexAsInt: ', hexAsInt);
     hexAsInt = Math.floor(hexAsInt/split)*(split - 1);
-    console.log('hexAsInt: ', hexAsInt);
     hex[0] = convertSingleIntToHex(Math.floor(hexAsInt/16));
-    console.log(hexAsInt%16);
     hex[1] = convertSingleIntToHex((hexAsInt%16));
-    console.log('hex: ', convertSingleIntToHex((hexAsInt%16)), convertSingleIntToHex(Math.floor(hexAsInt/16)));
     return hex;
 }
 

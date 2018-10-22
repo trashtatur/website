@@ -22,6 +22,7 @@ export class Action {
 
     /**
      * @description Formats own directory path to be suitable for linking to webserver. Important for outside helper
+     * (defaults to frontend/views)
      * @param dirname
      */
     private formatDirName(dirname) {

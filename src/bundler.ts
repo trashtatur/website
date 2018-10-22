@@ -37,7 +37,7 @@ export function bundleJSDependancies() {
         },
         function (err, res) {
             if (err) {
-                logger.error("An error occured: " + err)
+                logger.error("Problem while bundling JS Files for frontend: " + err)
             }
         });
 }
