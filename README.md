@@ -10,6 +10,6 @@ Uses a technology stack of round about these things and probably a bunch more:
 ![CYTOSCAPE](https://cytoscape.org/cytoscape-tutorials/assets/images/Cytoscape.png)
 ![HB](http://www.newthinktank.com/wp-content/uploads/2015/10/Handlebars-Tutorial.png)
 ![GULP](http://drupalbook.ru/sites/default/files/styles/width250/public/gulp_generator_logo.png?itok=Bhen0fQ-)
-![BROWSERIFIY](https://upload.wikimedia.org/wikipedia/en/thumb/2/27/Browserify.svg/1200px-Browserify.svg.png)
+![BROWSERIFIY](https://upload.wikimedia.org/wikipedia/en/thumb/2/27/Browserify.svg/150px-Browserify.svg.png)
 ![SASS](https://genuitec.gallerycdn.vsassets.io/extensions/genuitec/sass-loader-problem-matcher/1.0.0/1535057454309/Microsoft.VisualStudio.Services.Icons.Default)
 
