@@ -6,6 +6,10 @@
     padding:10px;
 }
 
+.fighter-helper-page-body {
+    display: inline-block;
+}
+
 .fighter-input-form {
     display: table-cell;
     padding-left: 8px;

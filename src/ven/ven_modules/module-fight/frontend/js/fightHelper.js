@@ -71,13 +71,18 @@ function initFighter(name,tp,init,rk,type) {
    $('#'+deleter).click(function () {
         $('#'+rowID).remove();
     });
-
+   addNewDie($('#'+rowID));
    document.getElementById(containerID).classList.add('fighter-row-container');
    document.getElementById(initID).addEventListener('change',function () {
        sortTable()
    });
     watchTP(document.getElementById(tpID));
     rowNumber++
+}
+
+function addNewDie(row) {
+    row.append('<td>'+ document.getElementsByClassName("20SidedDie-container")[0].innerHTML+ '</td>');
+    makeDiceRoll()
 }
 
 /**
@@ -109,36 +114,61 @@ function watchTP(htmlELEM) {
 
 
 /**
+ * All taken from : https://codepen.io/vicentemundim/details/cenIh/
+ *
+ */
+var sides = 20,
+    initialSide = 1,
+    timeoutId,
+    animationDuration  = 1000;
+
+
+function randomFace() {
+    var face = Math.floor((Math.random() * sides)) + initialSide;
+    return face;
+}
+
+function rollTo(die,face) {
+    clearTimeout(timeoutId);
+    die.attr('data-face', face)
+}
+
+function makeDiceRoll() {
+    $('.die').each(function(index) {
+        var die = $(this);
+        die.on("click",function () {
+            die.addClass('rolling');
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(function () {
+                die.removeClass('rolling');
+                rollTo(die,randomFace())
+            },animationDuration);
+            return false
+        })
+    });
+}
+
+
+/**
  * taken from https://www.w3schools.com/howto/howto_js_sort_table.asp
  */
 function sortTable() {
     var table, rows, switching, i, x, y, shouldSwitch;
     table = document.getElementById("fight-order-table");
     switching = true;
-    /* Make a loop that will continue until
-    no switching has been done: */
     while (switching) {
-        // Start by saying: no switching is done:
         switching = false;
         rows = table.rows;
-        /* Loop through all table rows (except the
-        first, which contains table headers): */
         for (i = 0; i < (rows.length -1); i++) {
-            // Start by saying there should be no switching:
             shouldSwitch = false;
-            /* Get the two elements you want to compare,
-            one from current row and one from the next: */
-            currentFighter = rows[i].getElementsByClassName('fighter-row-field-INIT')[0];
-            nextFighter = rows[i + 1].getElementsByClassName('fighter-row-field-INIT')[0];
-            // Check if the two rows should switch place:
+            let currentFighter = rows[i].getElementsByClassName('fighter-row-field-INIT')[0];
+            let nextFighter = rows[i + 1].getElementsByClassName('fighter-row-field-INIT')[0];
             if (Number(currentFighter.value) < Number(nextFighter.value)) {
                 shouldSwitch = true;
                 break;
             }
         }
         if (shouldSwitch) {
-            /* If a switch has been marked, make the switch
-            and mark that a switch has been done: */
             rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
             switching = true;
         }

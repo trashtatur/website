@@ -15,7 +15,7 @@ let settings = {
     root: "./build",
     entryType: "files",
     fileFilter: "*.js",
-    directoryFilter: ["!Controller", "!controller", "!node_modules", "!Model", "!model"],
+    directoryFilter: ["!Controller", "!controller", "!node_modules", "!Model", "!model", "!css"],
     depth: 6
 };
 
