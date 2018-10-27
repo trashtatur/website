@@ -1,9 +1,9 @@
 {{!-- Extends master layout --}}
 {{#>layouts/master}}
     {{#*inline "master-layout-head-block"}}
-        <script src="/module-fight/js/fightHelper.js"></script>
-        <link rel="stylesheet" type="text/css" href="/module-fight/css/20SidedDie.css">
-        <link rel="stylesheet" type="text/css" href="/module-fight/css/fighttable.css">
+     <script src="/module-fight/js/fightHelper.js"></script>
+     <link rel="stylesheet" type="text/css" href="/module-fight/css/20SidedDie.css">
+     <link rel="stylesheet" type="text/css" href="/module-fight/css/fighttable.css">
     {{/inline}}
     {{#*inline "master-layout-body-block"}}
         <div class="fighter-helper-page-body">
@@ -20,7 +20,7 @@
                                title="RK" placeholder="RK">
                         <input type="checkbox" name="unit-Type" title="isMonster">
                     </form>
-                    <button class="fighter-table-submit" onclick="orderFighters(); sortTable();">+</button>
+                    <button class="fighter-table-submit" onclick="fightHelper.orderFighters(); fightHelper.sortTable();">+</button>
                 </div>
                 <div class="fighter-table-container">
                     <table class="fightOrderTable" id="fight-order-table">
@@ -37,12 +37,12 @@
     {{/inline}}
     {{#*inline "master-layout-script-footer"}}
         <script>
-            initFighter('Khij', '0', '0', '0', 'hero');
-            initFighter('Argek', '0', '0', '0', 'hero');
-            initFighter('Dorn', '0', '0', '0', 'hero');
-            initFighter('Shimnar', '0', '0', '0', 'hero');
-            initFighter('Cpt. Blaubart', '0', '0', '0', 'hero');
-            initFighter('Gavin', '0', '0', '0', 'hero');
+            fightHelper.initFighter('Khij', '0', '0', '0', 'hero');
+            fightHelper.initFighter('Argek', '0', '0', '0', 'hero');
+            fightHelper.initFighter('Dorn', '0', '0', '0', 'hero');
+            fightHelper.initFighter('Shimnar', '0', '0', '0', 'hero');
+            fightHelper.initFighter('Cpt. Blaubart', '0', '0', '0', 'hero');
+            fightHelper.initFighter('Gavin', '0', '0', '0', 'hero');
         </script>
     {{/inline}}
 {{/layouts/master}}

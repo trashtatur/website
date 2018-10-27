@@ -175,3 +175,6 @@ function sortTable() {
     }
 }
 
+exports.initFighter = initFighter;
+exports.orderFighters = orderFighters;
+exports.sortTable = sortTable;
