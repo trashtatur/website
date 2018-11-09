@@ -1,4 +1,3 @@
-import {dbSync} from './model/sync'
+import {initializeDB} from "../../../DatabaseConfigurator";
 
-
-dbSync(true);
+initializeDB();

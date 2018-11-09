@@ -1,0 +1,43 @@
+<div class="add-fighter-form-container">
+    <div id="fighter-form-top-row">
+        <div class="fighter-form-field-container">
+            <label class="fighter-form-field-label">
+                Name:
+            </label>
+            <input type="text" id="fighter-form-top-row-field1" class="fighter-form-top-row-field"
+                   placeholder="Name">
+        </div>
+        {{!--
+            TOP ROW OF FORM (HORIZONTAL)
+            Can contain 2 additional fields:
+            1) id = fighter-form-top-row-field2 class = fighter-form-field
+            2) id = fighter-form-top-row-field3 class = fighter-form-field
+            All have corresponding Labels
+        --}}
+        <button id="fighter-form-add-top-row-button" class="fighter-add-field-button">+</button>
+        {{>fighter-field-add-miniform miniform-context="top-row"}}
+    </div>
+    <div id="fighter-form-bottom-col-container">
+        <div id="fighter-form-col1" class="fighter-form-bottom-col">
+            {{!--
+                 Can contain up to 5 fields exemplary of:
+                 1) id = fighter-form-col1-field1
+                 etc.
+                 Same for following cols
+            --}}
+            <button id="fighter-form-add-col1-button" class="fighter-add-field-button">+</button>
+            {{>fighter-field-add-miniform miniform-context="col1"}}
+        </div>
+        <div id="fighter-form-col2" class="fighter-form-bottom-col">
+
+            <button id="fighter-form-add-col2-button" class="fighter-add-field-button">+</button>
+            {{>fighter-field-add-miniform miniform-context="col2"}}
+        </div>
+        <div id="fighter-form-col3" class="fighter-form-bottom-col">
+
+            <button id="fighter-form-add-col3-button" class="fighter-add-field-button">+</button>
+            {{>fighter-field-add-miniform miniform-context="col3"}}
+        </div>
+    </div>
+    <!--<button class="fighter-table-submit" onclick="fightHelper.orderFighters(); fightHelper.sortTable();">+</button>-->
+</div>

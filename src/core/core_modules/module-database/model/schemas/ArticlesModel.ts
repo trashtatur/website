@@ -1,4 +1,16 @@
-import {Table, Column, Model,ForeignKey, Length, BelongsTo, PrimaryKey, AllowNull, CreatedAt, UpdatedAt, DeletedAt} from 'sequelize-typescript';
+import {
+    Table,
+    Column,
+    Model,
+    ForeignKey,
+    Length,
+    BelongsTo,
+    PrimaryKey,
+    AllowNull,
+    CreatedAt,
+    UpdatedAt,
+    DeletedAt
+} from 'sequelize-typescript';
 import {UserModel} from "./UserModel";
 
 /**
@@ -14,12 +26,12 @@ export class ArticlesModel extends Model<ArticlesModel> {
     @Column
     public id: number;
 
-    @Length({max:20})
+    @Length({max: 20})
     @AllowNull(false)
     @Column
     public author: string;
 
-    @Length({max:20})
+    @Length({max: 20})
     @AllowNull(false)
     @Column
     public path: string;
@@ -33,11 +45,11 @@ export class ArticlesModel extends Model<ArticlesModel> {
     @DeletedAt
     public deleteDate: Date;
 
-    @ForeignKey(()=>UserModel)
+    @ForeignKey(() => UserModel)
     @Column
     public userId: number;
 
-    @BelongsTo(()=>UserModel, 'userId')
+    @BelongsTo(() => UserModel, 'userId')
     public user: UserModel
 
 }

@@ -1,4 +1,4 @@
-import {dbReady, sequelize} from './connector';
+import {DatabaseConnector} from './connector';
 import logger from '../../module-logger'
 
 /**
@@ -11,15 +11,17 @@ import logger from '../../module-logger'
 /**
  * Synchronize the database with the models
  * @param force     see Sequlize.sync
+ * @param {Array<string>}databaseModels
  * @returns {Promise}
  */
-export async function dbSync(force) {
+export async function dbSync(force, databaseModels) {
+    var connector = new DatabaseConnector(databaseModels);
     if (!force) force = false;
     // noinspection BadExpressionStatementJS
-    dbReady;
+    await connector.authenticateDB();
 
     try {
-        const status = sequelize.sync({force});
+        const status = connector.getInstance().sync({force});
         logger.info('Sequelize table creation succesful');
         return status;
     } catch (err) {

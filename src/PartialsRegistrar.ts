@@ -4,7 +4,7 @@ import logger from './core/core_modules/module-logger'
 
 
 let partialsPathSetting = {
-  root:'./src',
+  root:'./build',
   entryType: 'directories',
   directoryFilter: ['!model',"!Model","!Controller","!controller","!node_modules"],
   depth: 5
@@ -37,7 +37,7 @@ function registerPartials() {
         },
         function (err,res) {
             if (err) {
-
+                logger.error('An error occured during partial adding: '+err)
             }
         })
 }

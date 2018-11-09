@@ -13,10 +13,8 @@ import logger from "../../module-logger";
 export class WebServer {
     private readonly port: number;
     public express;
-    private readonly hbsInstance;
 
     constructor() {
-        this.hbsInstance = exphbs.create();
         this.port = 3000;
         /**
          * @type {express}
@@ -36,9 +34,9 @@ export class WebServer {
      * @param virtualPath The path on the client. the dom path
      * @param actualPath The actual path on the server
      */
-    addStaticRoute(virtualPath:string,actualPath:string): void {
-        this.express.use(virtualPath,express.static(actualPath));
-        logger.debug('Added static route '+virtualPath+" for Path "+actualPath)
+    addStaticRoute(virtualPath: string, actualPath: string): void {
+        this.express.use(virtualPath, express.static(actualPath));
+        logger.debug('Added static route ' + virtualPath + " for Path " + actualPath)
     }
 
     /**
@@ -48,13 +46,13 @@ export class WebServer {
         registerPartials();
         let engine = exphbs({
             extname: 'hbs',
-            partialsDir: partialDirs,
+            helpers: require('../frontend/helpers/helpers').helpers(),
+            partialsDir: partialDirs
         });
         this.express.set('view engine','hbs');
         this.express.set('views',path.resolve(__dirname,'../../../../'));  //src
         this.express.engine('hbs',engine);
     }
-
 
     getServer(): express {
         return this.express;

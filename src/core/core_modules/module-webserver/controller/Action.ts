@@ -2,7 +2,6 @@ import express from 'express';
 import * as web from 'express-decorators';
 import {webserver} from '../index'
 let path = require('path');
-
 /**
  * @name Action
  * @description Base Controller Class to be extended by other Controllers.

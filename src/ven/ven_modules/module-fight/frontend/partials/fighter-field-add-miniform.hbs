@@ -1,0 +1,40 @@
+
+<div class="fighter-field-add-miniform-container" style="visibility: hidden" data-context={{miniform-context}}>
+    <div class="fighter-field-add-miniform">
+        <label>
+            <input type="text" placeholder="name" style="width: 50px;" data-role= 'name'>
+        </label>
+        <label>
+            <img src="https://cdn4.iconfinder.com/data/icons/spirit20/user-male-edit.png" alt="Editable?" class="fighter-miniform-image">
+            <input type="checkbox" data-role = 'editable'>
+        </label>
+        <label>
+            <img src="https://image.ibb.co/mxxU00/97809.png" alt="Text or Number field" class="fighter-miniform-image">
+            <input type="checkbox" checked data-role= 'numOrText'>
+        </label>
+        <label>
+            <img src="https://cdn.onlinewebfonts.com/svg/img_52248.png" class="fighter-miniform-image">
+            <input type="checkbox" data-role = 'sortBy'>
+        </label>
+        <label>
+            <img src="https://png.icons8.com/metro/1600/domain.png" class="fighter-miniform-image">
+            <input type="checkbox" data-role= 'extLink'>
+        </label>
+    </div>
+    <div>
+        <button class="fighter-field-add-miniform-submit" onclick="sendValues($(this).parent().prev())">&check;</button>
+    </div>
+    <script>
+        function sendValues(formElem) {
+            let context= $(formElem).parent().data()['context'];
+            let name = $(formElem).find("[data-role='name']").val();
+            let editable = $(formElem).find("[data-role='editable']").is(':checked');
+            let numOrText = $(formElem).find("[data-role='numOrText']").is(':checked');
+            let sortBy = $(formElem).find("[data-role='sortBy']").is(':checked');
+            let extLink = $(formElem).find("[data-role='extLink']").is(':checked');
+            if (name!=="") {
+                fighterFormTemplater.addRowField(context, name,editable,numOrText,sortBy,extLink);
+            }
+        }
+    </script>
+</div>

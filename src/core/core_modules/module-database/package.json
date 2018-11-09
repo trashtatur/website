@@ -10,10 +10,6 @@
   "author": "Andreas Hoerster, Felix Paur",
   "license": "ISC",
   "dependencies": {
-    "mysql2": "^1.5.3",
-    "reflect-metadata": "^0.1.12",
-    "sequelize": "^4.37.10",
-    "sequelize-decorators": "^1.0.2",
-    "sequelize-typescript": "^0.6.5"
+    "reflect-metadata": "^0.1.12"
   }
 }

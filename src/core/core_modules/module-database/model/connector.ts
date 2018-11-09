@@ -8,28 +8,43 @@ import logger from '../../module-logger';
  * @module module-database
  * @devnotes
  */
-let dataSupplier = new DataSupplier();
+export class DatabaseConnector {
 
-/**
- * This connects to the database
- * @type {Sequelize} : An ORM thing to interact with thse database
- */
-
-// Please mind that the database needs to actually exist first!
-export const sequelize = new Sequelize({
-    database: dataSupplier.getDatabaseName(),
-    username: dataSupplier.getDatabaseUser(),
-    password: dataSupplier.getDatabasePassword(),
-    host: dataSupplier.getDatabaseHost(),
-    dialect: 'mysql',
-    logging: (msg) => logger.data(msg),
-    modelPaths:[__dirname + '/schemas']
-});
+    private dataSupplier: DataSupplier;
+    private dataBaseModelFolders:Array<string>;
+    private sequelizeInstance:Sequelize;
 
 
-export const dbReady = sequelize.authenticate()
-.then(function(err) {
-        logger.info('Connection to database has been established successfully.');
-    }, function (err) {
-        logger.error('Unable to connect to the database:'+ err);
-    });
+    constructor(models:Array<string>) {
+        this.dataSupplier = new DataSupplier();
+        this.dataBaseModelFolders = models;
+    }
+
+
+    async initDatabase() {
+        this.sequelizeInstance = new Sequelize({
+            database: this.dataSupplier.getDatabaseName(),
+            username: this.dataSupplier.getDatabaseUser(),
+            password: this.dataSupplier.getDatabasePassword(),
+            host: this.dataSupplier.getDatabaseHost(),
+            dialect: 'mysql',
+            logging: (msg) => logger.data(msg),
+            modelPaths:this.dataBaseModelFolders
+        });
+    }
+
+    async authenticateDB() {
+        await this.initDatabase();
+
+        this.sequelizeInstance.authenticate()
+            .then(function(err) {
+                logger.info('Connection to database has been established successfully.');
+            }, function (err) {
+                logger.error('Unable to connect to the database:'+ err);
+            });
+    }
+
+    public getInstance() {
+        return this.sequelizeInstance;
+    }
+}
