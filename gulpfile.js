@@ -46,23 +46,12 @@ gulp.task('link:NPM',function () {
 
 gulp.task('link:handlebars',function () {
     return gulp.src(__dirname + '/src/**/frontend/js/*.js')
-        .pipe(gulp.symlink(function (file) {
+        .pipe(gulp.dest(function (file) {
             return file.base.replace('/src', '/build')
         }))
         .pipe(logger({
             before:'Linking JS files',
             after: 'All JS linked'
-        }))
-});
-
-gulp.task('link:JS',function () {
-    return gulp.src('src/**/frontend/**/*.hbs')
-        .pipe(gulp.symlink(function (file) {
-            return file.base.replace('/src', '/build')
-        }))
-        .pipe(logger({
-            before:'Linking Handlebars files',
-            after: 'All Handlebars files linked'
         }))
 });
 
@@ -96,7 +85,6 @@ gulp.task('default',
         'sass',
         'link:handlebars',
         'link:CSS',
-        'link:JS',
         'browserify'
     ),
     function () {
