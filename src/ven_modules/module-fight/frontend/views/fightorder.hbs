@@ -1,0 +1,34 @@
+{{!-- Extends master layout --}}
+{{#>layouts/master}}
+    {{#*inline "head-block"}}
+        <script src="/module-fight/js/fighterFormTemplater.js"></script>
+        <link rel="stylesheet" type="text/css" href="/module-fight/css/20SidedDie.css">
+        <link rel="stylesheet" type="text/css" href="/module-fight/css/fighttable.css">
+        <link rel="stylesheet" type="text/css" href="/module-fight/css/fighterForm.css">
+    {{/inline}}
+    {{#*inline "body-block"}}
+        <div class="fighter-helper-page-body">
+            {{>add-fighter-form}}
+            <div class="fighter-table-container">
+                <table class="fightOrderTable" id="fight-order-table">
+                    <tbody>
+                    {{!-- Fighter cells will go here via JS script --}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="20SidedDie-container" style="display: none;">
+            {{>20sidedDie}}
+        </div>
+    {{/inline}}
+    {{#*inline "script-footer"}}
+        <script>
+            /*fightHelper.initFighter('Khij', '10', '0', '17', 'hero');
+            fightHelper.initFighter('Argek', '16', '0', '17', 'hero');
+            fightHelper.initFighter('Dorn', '20', '0', '18', 'hero');
+            fightHelper.initFighter('Shimnar', '12', '0', '14', 'hero');
+            fightHelper.initFighter('Cpt. Blaubart', '30', '0', '13', 'hero');
+            fightHelper.initFighter('Gavin', '13', '0', '17', 'hero');*/
+        </script>
+    {{/inline}}
+{{/layouts/master}}

@@ -1,7 +1,7 @@
-import {webserver} from './core/core_modules/module-webserver';
-let database =  require('./core/core_modules/module-database');
-let controllerRegistrar = require('./ControllerRegistrar');
-let staticRegistrar = require('./StaticsRegistrar');
+import {webserver} from './core_modules/module-webserver';
+let database =  require('./core_modules/module-database');
+let controllerRegistrar = require('./setup/ControllerRegistrar');
+let staticRegistrar = require('./setup/StaticsRegistrar');
 
 /**
  * @name index

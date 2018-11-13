@@ -7,8 +7,8 @@
     "install": "node src/preinstall.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc --watch",
-    "prestart": "gulp; tsc; ./setbuild.sh;",
-    "start": "node build/index.js"
+    "prestart": "gulp; tsc;",
+    "start": "node build/index.js;"
   },
   "repository": {
     "type": "git",
@@ -22,20 +22,17 @@
   },
   "homepage": "https://github.com/trashtatur/website#readme",
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
     "browserify": "^16.2.2",
     "express-decorators": "^1.2.1",
+    "handlebars-helpers": "^0.10.0",
     "mysql2": "^1.6.4",
     "readdirp": "^2.1.0",
-    "requirejs": "^2.3.5",
     "sequelize": "^4.41.1",
     "sequelize-decorators": "^1.0.2",
     "sequelize-typescript": "^0.6.6"
   },
   "devDependencies": {
     "@types/node": "^10.5.1",
-    "babel-plugin-transform-decorators-legacy": "^1.3.5",
     "gulp": "^4.0.0",
     "gulp-buffer": "0.0.2",
     "gulp-logger": "0.0.2",
