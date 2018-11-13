@@ -44,20 +44,31 @@ gulp.task('link:NPM',function () {
         }))
 });
 
-gulp.task('link:handlebars',function () {
-    return gulp.src(__dirname + '/src/**/frontend/js/*.js')
+gulp.task('browserify:copy',function () {
+    return gulp.src('src/**/frontend/js/*.js')
         .pipe(gulp.dest(function (file) {
             return file.base.replace('/src', '/build')
         }))
         .pipe(logger({
-            before:'Linking JS files',
-            after: 'All JS linked'
+            before:'Copying JS files for bundling',
+            after: 'All JS files bundled'
         }))
 });
 
-gulp.task('browserify', function () {
+gulp.task('link:handlebars',function () {
+    return gulp.src('src/**/frontend/**/*.hbs')
+        .pipe(gulp.symlink(function (file) {
+            return file.base.replace('/src', '/build')
+        }))
+        .pipe(logger({
+            before:'Linking Handlebars files',
+            after: 'All Handlebars files linked'
+        }))
+});
 
-    return gulp.src('src/**/frontend/js/*.js', {read: false})
+gulp.task('browserify:bundle', function () {
+
+    return gulp.src('build/**/frontend/js/*.js', {read: false})
 
     // transform file objects using gulp-tap plugin
         .pipe(tap(function (file) {
@@ -78,6 +89,7 @@ gulp.task('browserify', function () {
         }));
 });
 
+gulp.task('browserify',gulp.series('browserify:copy','browserify:bundle'));
 
 gulp.task('default',
     gulp.series(
