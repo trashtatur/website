@@ -1,5 +1,4 @@
 let exphbs  = require('express-handlebars');
-var helpers = require('handlebars-helpers');
 let path = require('path');
 import {partialDirs,registerPartials} from "../../../setup/PartialsRegistrar";
 import * as express from 'express'
@@ -45,14 +44,14 @@ export class WebServer {
      */
     private setTemplateEngine() {
         registerPartials();
-        let engine = exphbs({
+        let hbsInstance = exphbs.create({
             extname: 'hbs',
-            helpers: helpers.html(),
+            helpers: require('../frontend/helpers/helpers').helpers() ,
             partialsDir: partialDirs
         });
         this.express.set('view engine','hbs');
         this.express.set('views',path.resolve(__dirname,'../../../../'));  //src
-        this.express.engine('hbs',engine);
+        this.express.engine('hbs',hbsInstance.engine);
     }
 
     getServer(): express {

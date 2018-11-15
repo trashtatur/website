@@ -10,7 +10,7 @@ const buffer = require('gulp-buffer');
 const sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('sass', function () {
-    return gulp.src(__dirname + '/src/**/frontend/css/*.scss')
+    return gulp.src('src/**/frontend/css/*.scss')
         .pipe(sass().on('error', sass.logError))
 
         .pipe(gulp.dest(function (file) {
