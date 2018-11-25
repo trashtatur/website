@@ -1,0 +1,22 @@
+.fighter-field-add-miniform {
+    display: inline-block;
+    background: #818181;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 2px;
+}
+
+.fighter-field-add-miniform-submit {
+    height: 0.8cm;
+    width: 0.8cm;
+    border-radius:30px;
+    border-style: none;
+    background: green;
+    font-size: 15pt;
+    color: white;
+    transition: background-color 200ms;
+}
+
+.fighter-field-add-miniform-submit:hover{
+    background: darkgreen;
+}

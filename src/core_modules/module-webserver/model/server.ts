@@ -1,5 +1,8 @@
 let exphbs  = require('express-handlebars');
 let path = require('path');
+const gulp = require('gulp');
+const hb = require('gulp-hb');
+const rename = require('gulp-rename');
 import {partialDirs,registerPartials} from "../../../setup/PartialsRegistrar";
 import * as express from 'express'
 import logger from "../../module-logger/index";

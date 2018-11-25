@@ -3,6 +3,8 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const browserify = require('browserify');
+const hb = require('gulp-hb');
+const rename = require('gulp-rename');
 const path = require('path');
 const logger = require('gulp-logger');
 const tap = require('gulp-tap');
@@ -55,15 +57,34 @@ gulp.task('browserify:copy',function () {
         }))
 });
 
-gulp.task('link:handlebars',function () {
+gulp.task('copy:handlebars',function () {
     return gulp.src('src/**/frontend/**/*.hbs')
         .pipe(gulp.symlink(function (file) {
             return file.base.replace('/src', '/build')
         }))
         .pipe(logger({
-            before:'Linking Handlebars files',
-            after: 'All Handlebars files linked'
+            before:'Copying Handlebars files',
+            after: 'All Handlebars files copied'
         }))
+});
+
+gulp.task('precompile:handlebars',function () {
+    const hbstream = hb()
+        .partials('./src/core_modules/module-webserver/frontend/partials/*/*.hbs')
+        .partials('./src/core_modules/module-webserver/frontend/partials/*.hbs')
+        .partials('./src/ven_modules/module-fight/frontend/partials/*.hbs')
+        .helpers(require('./build/core_modules/module-webserver/frontend/helpers/helpers').helpers())
+        .data({
+            "title": "TEST"
+        });
+
+    return gulp.src('src/*/*/frontend/views/*.hbs')
+        .pipe(hbstream)
+        .pipe(rename({
+            extname:".hbs.html",
+            dirname:""
+        }))
+        .pipe(gulp.dest('TEST'))
 });
 
 gulp.task('browserify:bundle', function () {
@@ -95,9 +116,10 @@ gulp.task('default',
     gulp.series(
         'link:NPM',
         'sass',
-        'link:handlebars',
+        'copy:handlebars',
         'link:CSS',
-        'browserify'
+        'browserify',
+        'precompile:handlebars'
     ),
     function () {
     }

@@ -1,13 +1,9 @@
 {{!-- Extends master layout --}}
 {{#>layouts/master}}
     {{#*inline "head-block"}}
-        <script src="/module-fight/js/fighterFormTemplater.js"></script>
-        <link rel="stylesheet" type="text/css" href="/module-fight/css/20SidedDie.css">
         <link rel="stylesheet" type="text/css" href="/module-fight/css/fighttable.css">
-        <link rel="stylesheet" type="text/css" href="/module-fight/css/fighterForm.css">
     {{/inline}}
     {{#*inline "body-block"}}
-        {{foo}}
         <div class="fighter-helper-page-body">
             {{>add-fighter-form}}
             <div class="fighter-table-container">

@@ -1,14 +1,14 @@
 FROM node
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
+RUN mkdir -p /app
+WORKDIR /app
 
 
-COPY package.json /usr/src/app/
+COPY package.json /app/
 RUN npm install
 RUN npm install typescript
 
-COPY . /usr/src/app
+COPY . /app
 EXPOSE 3000
 
 CMD [ "npm", "start" ]
