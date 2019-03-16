@@ -4,10 +4,10 @@
   "description": "Personal Homepage project",
   "main": "index.js",
   "scripts": {
-    "install": "node src/preinstall.ts",
+    "install": "node src/setup/preinstall.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc --watch",
-    "start": "tsc; gulp; node build/index.js;"
+    "start": "tsc"
   },
   "repository": {
     "type": "git",
@@ -21,16 +21,22 @@
   },
   "homepage": "https://github.com/trashtatur/website#readme",
   "dependencies": {
-    "browserify": "^16.2.2",
+    "@types/react": "^16.8.2",
+    "@types/react-dom": "^16.8.0",
+    "acorn": "^6.1.0",
+    "browserify": "^16.2.3",
     "express-decorators": "^1.2.1",
-    "gulp-hb": "^7.0.1",
     "gulp-rename": "^1.4.0",
-    "handlebars-helpers": "^0.10.0",
     "mysql2": "^1.6.4",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
     "readdirp": "^2.1.0",
     "sequelize": "^4.41.1",
     "sequelize-decorators": "^1.0.2",
-    "sequelize-typescript": "^0.6.6"
+    "sequelize-typescript": "^0.6.6",
+    "ts-node": "^8.0.2",
+    "tsify": "^4.0.1",
+    "typescript": "^3.3.3333"
   },
   "devDependencies": {
     "@types/node": "^10.5.1",

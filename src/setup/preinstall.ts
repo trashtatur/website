@@ -9,8 +9,8 @@ let cp = require('child_process');
  * @devnotes
  */
 // get module paths
-let cM = resolve(__dirname, 'core_modules');
-let venM = resolve(__dirname, 'ven_modules');
+let cM = resolve(__dirname, '../core_modules');
+let venM = resolve(__dirname, '../ven_modules');
 
 
 //for core modules

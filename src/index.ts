@@ -1,7 +1,7 @@
-import {webserver} from './core_modules/module-webserver';
-let database =  require('./core_modules/module-database');
-let controllerRegistrar = require('./setup/ControllerRegistrar');
-let staticRegistrar = require('./setup/StaticsRegistrar');
+//import {webserver} from './core_modules/module-webserver';
+//let database =  require('./core_modules/module-database');
+//let controllerRegistrar = require('./setup/ControllerRegistrar');
+//let staticRegistrar = require('./setup/StaticsRegistrar');
 
 /**
  * @name index
@@ -9,8 +9,8 @@ let staticRegistrar = require('./setup/StaticsRegistrar');
  * @module helper
  * @devnotes
  */
-controllerRegistrar.registerControllers();
-staticRegistrar.registerTemplates();
-webserver.startServer();
+//controllerRegistrar.registerControllers();
+//staticRegistrar.registerTemplates();
+//webserver.startServer();
 
 
